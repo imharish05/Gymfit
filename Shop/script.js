@@ -387,7 +387,7 @@ const AccessoriesCart = [{
   {
     id: 25,
     type: "Accessories",
-    img: "./Assets/Accessories/WristBand.webp",
+    img: "/Assets/Accessories/WristBand.webp",
     description: "Wrist Band straps",
     price: 237,
     quantity: 1,
@@ -607,4 +607,5 @@ shoppingCart.addEventListener("click", () => {
   productWrapper.classList.toggle("opacityShow")
   // productWrapper.style.pointerEvents = "none"
   cartAdder.classList.toggle("active");
+
 });
