@@ -276,7 +276,7 @@ header .col-8 {
 .Home {
     width: 100%;
     height: 100vh;
-    background: url(../Assets/Home.png);
+    background: url(./Assets/Home.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -906,4 +906,5 @@ footer .footerWrapper .h4{
         width: 90%;
         /* cards take full width */
     }
+
 }
