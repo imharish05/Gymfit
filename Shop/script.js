@@ -387,15 +387,6 @@ const AccessoriesCart = [{
   {
     id: 25,
     type: "Accessories",
-    img: "/Assets/Accessories/WristBand.webp",
-    description: "Wrist Band straps",
-    price: 237,
-    quantity: 1,
-    dub: false
-  },
-  {
-    id: 26,
-    type: "Accessories",
     img: "./Assets/Accessories/Jumping ropes.webp",
     description: "Skipping Ropes",
     price: 299,
@@ -609,3 +600,4 @@ shoppingCart.addEventListener("click", () => {
   cartAdder.classList.toggle("active");
 
 });
+
