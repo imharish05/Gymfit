@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gym Fit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body>
+
+    <div class="loaderBlock">
+        <div class="spinner"></div>
+        <div class="loader"></div>
+    </div>
+
+    <!-- Cart Adder -->
+
+             <div class="cartAdder" id="cartAdder">
+            <p class="h3">Shopping Cart</p>
+
+            <div class="container-fluid h-75" id="myCart">
+                <p class="h4" id="noItemMsg">No Items in the Cart</p>
+            </div>
+
+            <div class="priceShow h-25 d-flex">
+                <p>Total Price : </p>
+                <p id="totalPrice"></p>
+            </div>
+         </div>
+
+
+         <!-- Global -->
+
+    <div class="Global container-fluid px-0" id="global">
+
+        <!-- Header -->
+        <div class="container-fluid" id="headerWrapper">
+            <header class="row d-flex align-items-center justify-content-around">
+                <div class="col-4" id="logo">
+                    <img src="../Assests/logo.svg" alt="logo" class="img-fluid ps-2" width="70px">
+                </div>
+                <nav class="col-8 d-flex justify-content-end justify-content-lg-around align-items-center">
+                    <div class="d-none w-50 d-md-none d-lg-block" id="nav-items1">
+                        <ul class="d-flex align-items-center justify-content-between mb-0">
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Shop</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item mb-2" href="../Shop/Shop.html#Supplements">Supplements</a></li>
+                                    <li><a class="dropdown-item mb-2" href="../Shop/Shop.html#Equipments">Equipment</a></li>
+                                    <li><a class="dropdown-item mb-1" href="../Shop/Shop.html#Accessories">Accessories</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../Programs/Programs.html">Programs</a></li>
+                            <li><a href="../Contact/Contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="Nav-icons d-flex justify-content-around align-items-center w-25 d-none d-lg-flex"
+                        id="Nav-icons">
+                        <div class="icon-shop">
+                            <a href="#"><i class="fa-solid fa-cart-shopping position-relative" id="shoppingCart"></i></a>
+                            <p class="cartNum" id="cartNum">0</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                    <div class="nav-toggle-wrapper position-relative d-lg-none d-xl-none">
+                        <i onclick="NavMenu()" class="fa-solid fa-bars pe-4 d-lg-none d-xl-none" id="showNav"></i>
+                        <div class="nav-items2" id="navItems2">
+                            <ul class="h-75 w-100 ps-0 mb-0 d-flex flex-column justify-content-around">
+                                <li class="w-100"><a href="../index.html">Home</a></li>
+                                <li class="dropstart">
+                                    <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Shop</a>
+                                    <ul class="dropdown-menu me-1">
+                                        <li><a class="dropdown-item mb-2" href="../Shop/Shop.html#Supplements">Supplements</a></li>
+                                        <li><a class="dropdown-item mb-2" href="../Shop/Shop.html#Equipments">Equipment</a></li>
+                                        <li><a class="dropdown-item mb-1" href="../Shop/Shop.html#Accessories">Accessories</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../Programs/Programs.html">Programs</a></li>
+                                <li><a href="../Contact/Contact.html">Contact</a></li>
+                            </ul>
+
+                            <div class="brands w-100 h-25 d-flex align-items-center justify-content-around">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Content -->
+
+        <div class="container-fluid px-0" >
+            <div class="hero-content col-lg-6 d-flex justify-content-center flex-column">
+                <p class="h1 ps-4 -2 fw-bold">Get <span class="h1 fw-bold" id="typed"></span></p>
+                <p class=" h4 ps-4">GymFit isn’t just about lifting weights, it’s about lifting yourself. Every drop of sweat is a step closer to the stronger, healthier, and unstoppable version of you. Here, limits are challenged, excuses are left behind, and discipline builds greatness. At GymFit, we don’t just train bodies — we transform lives</p>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="container-fluid box pt-3">
+            <div class="wrapper d-flex flex-column justify-content-around">
+                <div class="row py-4 text-center tagline px-0 my-5">
+                    <p class="h1 text-white fw-bold">JOIN THE GYMFIT</p>
+                </div>
+                <div class="row d-flex contactMap mt-3">
+                    <div class="col-lg-6 border d-flex align-items-center justify-content-center">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60424.52413465102!2d-73.99127084001911!3d40.711260136117545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1756006427358!5m2!1sen!2sin"
+                            allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                            title="Google Maps"></iframe>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="message d-flex justify-content-around align-items-center flex-column h-100">
+                            <p class="h2">Drop us message.</p>
+                            <form class="inputs d-flex flex-wrap flex-lg-column align-items-center gap-lg-4 gap-4">
+                                <input type="text" class="col-12 py-lg-2 px-1" placeholder="Your Name" required />
+                                <input type="email" class="col-12 py-lg-2 px-1" placeholder="Email" required />
+                                <input type="tel" class="col-12 py-lg-2 px-1" placeholder="Phone" required />
+                                <textarea name="" id="" class="col-12 px-1" placeholder="Message Here"></textarea>
+                                <button class="px-3 py-2" type="submit">
+                                    submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-5">
+                    <div class="footerWrapper d-flex justify-content-center my-3 mx-1 py-5">
+                        <div class="row d-flex align-items-center w-100 pt-4">
+                            <div class="footerContent col-lg-6">
+                                <img src="../Assests/logo.svg" class="img-fluid" alt="">
+                                <p class="h4 pt-3">Your Fitness. Your Journey. Your GymFit</p>
+
+                                <div class="address py-4">
+                                    <p><i class="fa-solid fa-location-dot pe-2"></i> 123 Broadway, New York, NY 10001
+                                    </p>
+                                    <p><i class="bi bi-telephone-fill pe-2"></i> +1 (212) 555-7890</p>
+                                    <p><i class="bi bi-envelope-fill pe-2"></i> support@gymfit.com</p>
+                                </div>
+                            </div>
+                            <div class="footerLinks col-lg-6 d-flex flex-wrap">
+                                <div class="footerNav d-flex flex-column col-lg-6">
+                                    <p class="h4">Discover</p>
+                                    <a href="../Shop/Shop.html#Supplements" class="py-3">Supplements</a>
+                                    <a href="../Shop/Shop.html#Equipments" class="py-3">Equipments</a>
+                                    <a href="../Shop/Shop.html#Accessories" class="py-3">Accessories</a>
+                                    <a href="../Programs/Programs.html" class="py-3">Programs</a>
+                                    <a href="./Contact.html" class="py-3">Contact</a>
+                                </div>
+
+                                <div class="parBrands col-lg-6">
+
+                                    <div class="para">
+                                        <p class="h4">Stronger Together</p>
+                                        <p class="pb-4">At GymFit, we believe fitness is more than just a routine – it’s
+                                            a lifestyle. With world-class training, modern equipment, and dedicated
+                                            support, we’re here to help you push limits, stay motivated, and achieve
+                                            your best self.</p>
+
+                                    </div>
+                                    <p class="h4">Follow Us</p>
+                                    <a href="#"><i class="fa-brands fa-twitter pe-3"></i></a>
+                                    <a href="#"><i class="fa-brands fa-facebook px-3"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram px-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed("#typed", {
+    strings: ["Stronger", "Greater", "Bolder"],
+    typeSpeed: 100,  
+    backSpeed: 50,      
+    loop: true         
+  });
+</script>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gym Fit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./Shop.css">
+</head>
+
+
+<body>
+
+    <!-- Loader -->
+    <div class="loaderBlock">
+        <div class="spinner"></div>
+        <div class="loader"></div>
+    </div>
+
+    <!-- CartAdder -->
+        <div class="cartAdder" id="cartAdder">
+            <p class="h3">Shopping Cart</p>
+
+            <div class="container-fluid h-75" id="myCart">
+                <p class="h4" id="noItemMsg">No Items in the Cart</p>
+            </div>
+
+            <div class="priceShow h-25 d-flex">
+                <p>Total Price : </p>
+                <p id="totalPrice"></p>
+            </div>
+         </div>
+
+    <!-- Global -->
+    <div class="Global container-fluid px-0" id="global">
+
+        <!-- Header -->
+        <div class="container-fluid" id="headerWrapper">
+            <header class="row d-flex align-items-center justify-content-around">
+                <div class="col-4" id="logo">
+                    <img src="../Assests/logo.svg" alt="logo" class="img-fluid ps-2" width="70px">
+                </div>
+                <nav class="col-8 d-flex justify-content-end justify-content-lg-around align-items-center">
+                    <div class="d-none w-50 d-md-none d-lg-block" id="nav-items1">
+                        <ul class="d-flex align-items-center justify-content-between mb-0">
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Shop</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item mb-2" href="#Supplements">Supplements</a></li>
+                                    <li><a class="dropdown-item mb-2" href="#Equipments">Equipment</a></li>
+                                    <li><a class="dropdown-item mb-1" href="#Accessories">Accessories</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../Programs/Programs.html">Programs</a></li>
+                            <li><a href="../Contact/Contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="Nav-icons d-flex justify-content-around align-items-center w-25 d-none d-lg-flex"
+                        id="Nav-icons">
+                        <div class="icon-shop">
+                            <i class="fa-solid fa-cart-shopping position-relative" id="shoppingCart"></i>
+                            <p class="cartNum" id="cartNum">0</p>
+                        </div>
+                       
+                        <a href="#"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                    <div class="nav-toggle-wrapper position-relative d-lg-none d-xl-none">
+                        <i onclick="NavMenu()" class="fa-solid fa-bars pe-4 d-lg-none d-xl-none" id="showNav"></i>
+                        <div class="nav-items2" id="navItems2">
+                            <ul class="h-75 w-100 ps-0 mb-0 d-flex flex-column justify-content-around">
+                                <li class="w-100"><a href="../index.html">Home</a></li>
+                                <li class="dropstart">
+                                    <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Shop</a>
+                                    <ul class="dropdown-menu me-1">
+                                        <li><a class="dropdown-item mb-2" href="#Supplements">Supplements</a></li>
+                                        <li><a class="dropdown-item mb-2" href="#Equipments">Equipments</a></li>
+                                        <li><a class="dropdown-item mb-1" href="#Accessries">Accessories</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../Programs/Programs.html">Programs</a></li>
+                                <li><a href="../Contact/Contact.html">Contact</a></li>
+                            </ul>
+
+                            <div class="brands w-100 h-25 d-flex align-items-center justify-content-around">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Cart -->
+
+
+        <!-- Supplements -->
+<div class="container-fluid productWrapper" id="productWrapper">
+        <div class="search border">
+            <div class="productnav container d-flex flex-wrap align-items-center justify-content-between py-4">
+                <div class="itemsNav d-flex flex-wrap">
+                    <p class="h5 me-4">Categories</p>
+                    <a href="#" class="me-4 text-decoration-none" onclick="category('all')">All Products</a>
+                    <a href="#" class="me-4 text-decoration-none" onclick="category('Supplements')">Supplements</a>
+                    <a href="#" class="me-4 text-decoration-none" onclick="category('Equipments')">Equipments</a>
+                    <a href="#" class="me-4 text-decoration-none" onclick="category('Accessories')">Accessories</a>
+                </div>
+
+                <form onsubmit="Search()" id="formPrevent">
+                    <input type="text" placeholder="Search Products" class="me-2" id="searchInput">
+
+                    <button class="border-0 bg-white"><i class="fa-solid fa-magnifying-glass p-2" type="submit"
+                            id="searchbtn" tabindex="0" onclick="Search()"></i></button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="productHolder">
+            <div class="container Supplements px-0" id="Supplements">
+                <p class="h1 text-center py-5 headText">Supplements</p>
+                    <div class="row products d-flex flex-wrap" id="supplementsBlock">
+    
+                    </div>
+                
+            </div>
+            <div class="Equipments container px-0" id="Equipments">
+                <p class="h1 text-center py-5 headText">Equipments</p>
+                    <div class="row products d-flex flex-wrap" id="equipmentsBlock">
+
+                    </div>
+
+            </div>
+
+
+            <div class="Accessories container px-0" id="Accessories">
+                <p class="h1 text-center py-5 headText">Accessories</p>
+                    <div class="row products d-flex flex-wrap" id="accessoriesBlock">
+
+                    </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="container-fluid box pt-3">
+            <div class="wrapper d-flex flex-column justify-content-around">
+                <div class="row pt-5">
+                    <div class="footerWrapper d-flex justify-content-center my-3 mx-1 py-5">
+                        <div class="row d-flex align-items-center w-100 pt-4">
+                            <div class="footerContent col-lg-6">
+                                <img src="../Assests/logo.svg" class="img-fluid" alt="">
+                                <p class="h4 pt-3">Your Fitness. Your Journey. Your GymFit</p>
+
+                                <div class="address py-4">
+                                    <p><i class="fa-solid fa-location-dot pe-2"></i> 123 Broadway, New York, NY 10001
+                                    </p>
+                                    <p><i class="bi bi-telephone-fill pe-2"></i> +1 (212) 555-7890</p>
+                                    <p><i class="bi bi-envelope-fill pe-2"></i> support@gymfit.com</p>
+                                </div>
+                            </div>
+                            <div class="footerLinks col-lg-6 d-flex flex-wrap">
+                                <div class="footerNav d-flex flex-column col-lg-6">
+                                    <p class="h4">Discover</p>
+                                    <a class="py-3" href="#Supplements">Supplements</a>
+                                    <a class="py-3" href="#Equipments">Equipment</a>
+                                    <a class="py-3" href="#Accessries">Accessories</a>
+                                    <a href="../Programs/Programs.html" class="py-3">Programs</a>
+                                    <a href="../Contact/Contact.html" class="py-3">Contact</a>
+                                </div>
+
+                                <div class="parBrands col-lg-6">
+
+                                    <div class="para">
+                                        <p class="h4">Stronger Together</p>
+                                        <p class="pb-4">At GymFit, we believe fitness is more than just a routine – it’s
+                                            a lifestyle. With world-class training, modern equipment, and dedicated
+                                            support, we’re here to help you push limits, stay motivated, and achieve
+                                            your best self.</p>
+
+                                    </div>
+                                    <p class="h4">Follow Us</p>
+                                    <a href="#"><i class="fa-brands fa-twitter pe-3"></i></a>
+                                    <a href="#"><i class="fa-brands fa-facebook px-3"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram px-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

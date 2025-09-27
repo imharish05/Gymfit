@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gym Fit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <div class="loaderBlock">
+        <div class="spinner"></div>
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Cart adder -->
+         <div class="cartAdder" id="cartAdder">
+            <p class="h3">Shopping Cart</p>
+
+            <div class="container-fluid h-75" id="myCart">
+                <p class="h4" id="noItemMsg">No Items in the Cart</p>
+            </div>
+
+            <div class="priceShow h-25 d-flex">
+                <p>Total Price : </p>
+                <p id="totalPrice"></p>
+            </div>
+         </div>
+
+    <div class="Global container-fluid px-0" id="global">
+
+        <!-- Header -->
+        <div class="container-fluid" id="headerWrapper">
+            <header class="row d-flex align-items-center justify-content-around">
+                <div class="col-4" id="logo">
+                    <img src="../Assets/logo.svg" alt="logo" class="img-fluid ps-2" width="70px">
+                </div>
+                <nav class="col-8 d-flex justify-content-end justify-content-lg-around align-items-center">
+                    <div class="d-none w-50 d-md-none d-lg-block" id="nav-items1">
+                        <ul class="d-flex align-items-center justify-content-between mb-0">
+                            <li><a href="./index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Shop</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item mb-2" href="./Shop/Shop.html#Supplements">Supplements</a></li>
+                                    <li><a class="dropdown-item mb-2" href="./Shop/Shop.html#Equipments">Equipment</a></li>
+                                    <li><a class="dropdown-item mb-1" href="./Shop/Shop.html#Accessories">Accessories</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./Programs/Programs.html">Programs</a></li>
+                            <li><a href="./Contact/Contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="Nav-icons d-flex justify-content-around align-items-center w-25 d-none d-lg-flex"
+                        id="Nav-icons">
+                            <div class="icon-shop">
+                            <i class="fa-solid fa-cart-shopping position-relative" id="shoppingCart"></i></a>
+                            <p class="cartNum" id="cartNum">0</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                    <div class="nav-toggle-wrapper position-relative d-lg-none d-xl-none">
+                        <i onclick="NavMenu()" class="fa-solid fa-bars pe-4 d-lg-none d-xl-none" id="showNav"></i>
+                        <div class="nav-items2" id="navItems2">
+                            <ul class="h-75 w-100 ps-0 mb-0 d-flex flex-column justify-content-around">
+                                <li class="w-100"><a href="./index.html">Home</a></li>
+                                <li class="dropstart">
+                                    <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Shop</a>
+                                    <ul class="dropdown-menu me-1">
+                                        <li><a class="dropdown-item mb-2"
+                                                href="./Shop/Shop.html#Supplements">Supplements</a></li>
+                                        <li><a class="dropdown-item mb-2"
+                                                href="./Shop/Shop.html#Equipments">Equipment</a></li>
+                                        <li><a class="dropdown-item mb-1"
+                                                href="./Shop/Shop.html#Accessories">Accessories</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./Programs/Programs.html">Programs</a></li>
+                                <li><a href="./Contact/Contact.html">Contact</a></li>
+                            </ul>
+
+                            <div class="brands w-100 h-25 d-flex align-items-center justify-content-around">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Home Page -->
+        <div class="container-fluid px-0 d-flex align-items-center Home box show" id="home">
+            <div class="content w-lg-50 ps-4 mt-5">
+                <p class="h1">Your Ultimate Destination for Fitness Gear,</p>
+                <p class="h3">Nutrition & Training Plans</p>
+                <p class="h5 pt-4">At GymFit , we empower your fitness journey with top-tier gym equipment,
+                    science-backed supplements, and expert-designed workout plans — all in one place.</p>
+                <button class="mt-4 p-2 rounded-pill"><a href="./Shop/Shop.html#Supplements" class="w-100 h-100 p-2">Shop Now</a></button>
+            </div>
+        </div>
+
+        <!-- Plans -->
+        <div class="Plans container-fluid px-0 d-flex flex-column justify-content-around box">
+            <div class="row content1 w-100 mx-0">
+                <p class="display-6 text-center">What we offer</p>
+                <p class="display-5 text-center">Achieve amazing results with our services</p>
+            </div>
+
+            <div class="content2 row w-100 mx-0 h-75 d-flex align-items-center justify-content-evenly">
+
+                <!-- Supplements -->
+                <div
+                    class="mainCard col-lg-3 col-md-6 col-9 d-flex flex-column align-items-center justify-content-around">
+                    <div class="banner h-75 w-100">
+                        <div class="card-inner w-100 h-100">
+                            <div
+                                class="frontCard w-100 h-100 d-flex flex-column align-items-center justify-content-evenly">
+                                <i class="bi bi-heart-pulse display-1"></i>
+                                <p class="h5">Power Your Performance</p>
+                            </div>
+                            <div class="row backCard mx-0 h-100 flex-column align-items-center justify-content-around">
+                                <p class="cardPara px-4">Shop top-quality supplements to boost energy, build
+                                    muscle, and speed up recovery. Everything you need to fuel your fitness goals—fast
+                                    and effectively.</p>
+                                <button class="p-2 rounded-pill w-50"><a href="./Shop/Shop.html#Equipments" class="border">Shop Now</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment -->
+                <div
+                    class="mainCard col-lg-3 col-md-6 col-9 d-flex flex-column align-items-center justify-content-around">
+                    <div class="banner h-75 w-100">
+                        <div class="card-inner w-100 h-100">
+                            <div
+                                class="frontCard w-100 h-100 d-flex flex-column align-items-center justify-content-evenly">
+                                <i class="fa-solid fa-dumbbell h1 display-1"></i>
+                                <p class="h5">Power Your Performance</p>
+                            </div>
+                            <div class="row backCard mx-0 h-100 flex-column align-items-center justify-content-around">
+                                <p class="cardPara px-4">Shop durable, high-quality gym equipment built to boost
+                                    strength, support performance, for both home and Gym-level Fitness</p>
+                                <button class="p-2 rounded-pill w-50"><a href="./Shop/Shop.html#Equipments">Shop Now</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div
+                    class="mainCard col-lg-3 col-md-6 col-9 d-flex flex-column align-items-center justify-content-around">
+                    <div class="banner h-75 w-100">
+                        <div class="card-inner w-100 h-100">
+                            <div
+                                class="frontCard w-100 h-100 d-flex flex-column align-items-center justify-content-evenly">
+                                <i class="bi bi-bag-fill h1 display-1"></i>
+                                <p class="h5">Elevate Your Essentials</p>
+                            </div>
+                            <div class="row backCard mx-0 h-100 flex-column align-items-center justify-content-around">
+                                <p class="px-4 cardPara">Explore Premium fitness accessories—from gloves to grips—built
+                                    for comfort, support, and style in one place.</p>
+                                <button class="p-2 rounded-pill w-50"><a href="./Shop/Shop.html#Accessories">Shop Now</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programs -->
+                <div
+                    class="mainCard col-lg-3 col-md-6 col-9 d-flex flex-column align-items-center justify-content-around">
+                    <div class="banner h-75 w-100">
+                        <div class="card-inner w-100 h-100">
+                            <div
+                                class="frontCard w-100 h-100 d-flex flex-column align-items-center justify-content-evenly">
+                                <i class="bi bi-calendar-heart h1 display-1"></i>
+                                <p class="h5">Stay on Track Monthly</p>
+                            </div>
+                            <div class="row backCard mx-0 h-100 flex-column align-items-center justify-content-around">
+                                <p class="cardPara px-4">Flexible monthly plans and get expert guidance, progress
+                                    tracking, and tailored routines—all refreshed every month to match your goals.</p>
+                                <button class="rounded-pill w-50 p-2"><a href="./Programs/Programs.html" class="p-4">Shop Now</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div
+            class="benefits box py-0 container-fluid d-flex flex-column align-items-center justify-content-evenly px-0 m-0">
+            <p class="h1 text-center py-2">Why GymFit ?</p>
+
+            <div class="row benefitsContent w-100 m-0 d-flex justify-content-center align-items-center">
+
+                <!-- Left content -->
+                <div class="col-lg-4 d-flex flex-column justify-content-around">
+                    <div
+                        class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-center flex-md-column align-items-md-center justify-content-md-center">
+                        <div class="wrap text-lg-end text-md-center text-center me-3">
+                            <p class="h4">Build Strength Faster</p>
+                            <p>Consistent workouts with the right equipment help you increase strength and endurance
+                                effectively.</p>
+                        </div>
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                    </div>
+
+                    <div
+                        class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-center flex-md-column align-items-md-center justify-content-md-center mb-4">
+                        <div class="wrap text-lg-end text-md-center text-center me-3">
+                            <p class="h4">Heart Health Boost</p>
+                            <p>Gym training and proper nutrition lower cholesterol, improve circulation, and keep your
+                                heart strong.</p>
+                        </div>
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <div
+                        class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-center flex-md-column align-items-md-center justify-content-md-center">
+                        <div class="wrap text-lg-end text-md-center text-center me-3">
+                            <p class="h4">Confidence & Better Physique</p>
+                            <p>Achieve your dream body and feel more confident with the right fitness routines and
+                                protein support.</p>
+                        </div>
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <i class="bi bi-snow2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center image -->
+                <div class="col-lg-4 text-center imageBlock">
+                    <img class="img-fluid pe-2" src="./Assets/benifits-img.png" alt="benefits-img">
+                </div>
+
+                <!-- Right content -->
+                <div class="col-lg-4 d-flex flex-column justify-content-around">
+                    <div
+                        class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-center flex-md-column align-items-md-center justify-content-md-center mb-4">
+                        <div class="icon d-flex align-items-center justify-content-center me-3">
+                            <i class="bi bi-moon-stars"></i>
+                        </div>
+                        <div class="wrap text-lg-start text-md-center text-center">
+                            <p class="h4">Improved Sleep & Recovery</p>
+                            <p>Good workouts combined with protein-rich diets enhance recovery and help you sleep
+                                better.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-center flex-md-column align-items-md-center justify-content-md-center mb-4">
+                        <div class="icon d-flex align-items-center justify-content-center me-3">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <div class="wrap text-lg-start text-md-center text-center">
+                            <p class="h4">Full-Body Training</p>
+                            <p>From head to toe, GymFit programs ensure balanced muscle growth and strength in every
+                                workout.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-center flex-md-column align-items-md-center justify-content-md-center">
+                        <div class="icon me-3 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <div class="wrap text-lg-start text-md-center text-center">
+                            <p class="h4">Enhanced Energy & Focus</p>
+                            <p>Our supplements and diet plans help reduce fatigue, improve focus, and keep you energized
+                                all day.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Programs -->
+        <div class="box programs container-fluid px-0 m-0 d-flex flex-column justify-content-evenly">
+            <p class="h1 text-center">Programs</p>
+            <div class="wrapper row d-lg-flex align-items-lg-center justify-content-lg-around align-items-center">
+                <div class="col-lg-2 col-sm-12">
+                    <div class="content d-lg-flex flex-lg-column align-items-lg-center justify-content-lg-center">
+                        <i class="material-icons">directions_run</i>
+                        <p class="h2">Cardio</p>
+                        <p class="text-center">Take your fitness to the next level with GymFit’s Cardio Plan</p>
+                        <button><a href="./Programs/Programs.html">View Plan</a></button>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-12">
+                    <div class="content d-lg-flex flex-lg-column align-items-center justify-content-lg-center">
+                        <i class="material-icons">self_improvement</i>
+                        <p class="h2">Abs</p>
+                        <p class="text-center">Strengthen your core with focused ab workouts</p>
+                        <button><a href="./Programs/Programs.html">View Plan</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row w-100">
+                <img src="./Assets/banner-img.webp" class="img-fluid px-0 mx-0 col-12" alt="banner-Part">
+            </div>
+            <div class="wrapper row d-lg-flex align-items-lg-center justify-content-lg-around">
+                <div class="col-lg-2 col-sm-12">
+                    <div class="content d-lg-flex flex-lg-column align-items-center justify-content-lg-center">
+                        <i class="material-icons">rowing</i>
+                        <p class="h2">Shoulder's</p>
+                        <p class="text-center">Make your Shoulder's Show your pride</p>
+                        <button><a href="./Programs/Programs.html">View Plan</a></button>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-12">
+                    <div class="content d-lg-flex flex-lg-column align-items-center justify-content-lg-center">
+                        <i class="material-icons">sports_martial_arts</i>
+                        <p class="h2">Leg</p>
+                        <p class="text-center">Build lower body strength with targeted leg workouts that power up your
+                        </p>
+                        <button><a href="./Programs/Programs.html">View Plan</a></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Trainers -->
+
+        <div class="Trainer box container-fluid">
+            <p class="h1 text-center mb-5">Our Trainers</p>
+
+            <div class="row justify-content-evenly">
+
+                <div class="col-lg-3 col-md-5 col-sm-6 col-10 mb-4 d-flex justify-content-center">
+                    <div class="card mainCard">
+                        <div class="profile-pic">
+                            <img src="./Assets/Trainer1.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="bottom">
+                            <div class="content">
+                                <span class="name">Alexander</span>
+                                <span class="about-me">Guides you on using gym equipment safely</span>
+                            </div>
+                            <div class="bottom-bottom">
+                                <div class="social-links-container">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <button class="button">Contact Me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-5 col-sm-6 col-10 mb-4 d-flex justify-content-center">
+                    <div class="card mainCard">
+                        <div class="profile-pic">
+                            <img src="./Assets/Trainer2.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="bottom">
+                            <div class="content">
+                                <span class="name">Natasa</span>
+                                <span class="about-me">Creates you a customized workout & diet plans.</span>
+                            </div>
+                            <div class="bottom-bottom">
+                                <div class="social-links-container">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <button class="button">Contact Me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-5 col-sm-6 col-10 mb-4 d-flex justify-content-center">
+                    <div class="card mainCard">
+                        <div class="profile-pic">
+                            <img src="./Assets/Trainer4.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="bottom">
+                            <div class="content">
+                                <span class="name">Victor</span>
+                                <span class="about-me">Focuses on muscle building, strength training, and
+                                    performance.</span>
+                            </div>
+                            <div class="bottom-bottom">
+                                <div class="social-links-container">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <button class="button">Contact Me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-5 col-sm-6 col-10 mb-4 d-flex justify-content-center">
+                    <div class="card mainCard">
+                        <div class="profile-pic">
+                            <img src="./Assets/Trainer6.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="bottom">
+                            <div class="content">
+                                <span class="name">Sam</span>
+                                <span class="about-me">Leads classes like Zumba, aerobics, yoga, spinning, HIIT,
+                                    CrossFit, etc</span>
+                            </div>
+                            <div class="bottom-bottom">
+                                <div class="social-links-container">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <button class="button">Contact Me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="Reviews box container-fluid px-0 mb-2">
+            <div class="wrapper d-flex flex-column justify-content-around align-items-center">
+                <p class="h1 text-center py-3">What the customer says !</p>
+
+                <div id="testimonialCarousel" class="carousel slide col-lg-8 col-11 py-3" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active text-center">
+                            <img src="./Assets/Testimonial1.png" class="img-fluid rounded-pill mt-3" alt="">
+                            <p class="h2 py-4 text-primary">Jennifer Qwen</p>
+                            <p class="h2 py-4 text-danger">“Your Body. Your Goals. Our Support.”</p>
+                            <p class="">"GymFit has been a complete game-changer for me. The trainers are supportive and
+                                always push me to give my best. Along with their workout guidance, the supplements gave
+                                me the stamina I needed, and I feel healthier and more confident than ever."</p>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <img src="./Assets/Testimonial2.png" class="img-fluid rounded-pill mt-3" alt="">
+                            <p class="h2 py-4 text-primary">Sam</p>
+                            <p class="h2 py-4 text-danger">“Fuel Your Strength, Shape Your Future.”</p>
+                            <p class="">"I joined GymFit to lose weight and improve my strength, and it worked better
+                                than I imagined. Their training sessions are fun yet effective, and the products and
+                                supplements are of excellent quality. I feel stronger, more energetic, and really happy
+                                with my progress."</p>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <img src="./Assets/Testimonial3.png" class="img-fluid rounded-pill mt-3" alt="">
+                            <p class="h2 py-4 text-primary">Victor</p>
+                            <p class="h2 py-4 text-danger">“Energy, Strength, and Confidence – That’s GymFit.”</p>
+                            <p class="">"GymFit has been a complete game-changer for me. The trainers are supportive and
+                                always push me to give my best. Along with their workout guidance, the supplements gave
+                                me the stamina I needed, and I feel healthier and more confident than ever."</p>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="container-fluid box pt-3">
+            <div class="wrapper d-flex flex-column justify-content-around">
+                <div class="row pt-5">
+                    <div class="footerWrapper d-flex justify-content-center my-3 mx-1 py-5">
+                        <div class="row d-flex align-items-center w-100 pt-4">
+                            <div class="footerContent col-lg-6">
+                                <img src="./Assests/logo.svg" class="img-fluid" alt="">
+                                <p class="h4 pt-3">Your Fitness. Your Journey. Your GymFit</p>
+
+                                <div class="address py-4">
+                                    <p><i class="fa-solid fa-location-dot pe-2"></i> 123 Broadway, New York, NY 10001
+                                    </p>
+                                    <p><i class="bi bi-telephone-fill pe-2"></i> +1 (212) 555-7890</p>
+                                    <p><i class="bi bi-envelope-fill pe-2"></i> support@gymfit.com</p>
+                                </div>
+                            </div>
+                            <div class="footerLinks col-lg-6 d-flex flex-wrap">
+                                <div class="footerNav d-flex flex-column col-lg-6">
+                                    <p class="h4">Discover</p>
+                                    <a href="./Shop/Shop.html#Supplements" class="py-3">Supplements</a>
+                                    <a href="./Shop/Shop.html#Equipments" class="py-3">Equipments</a>
+                                    <a href="./Shop/Shop.html#Accessories" class="py-3">Accessories</a>
+                                    <a href="./Programs/Programs.html" class="py-3">Programs</a>
+                                    <a href="./Contact/Contact.html" class="py-3">Contact</a>
+                                </div>
+
+                                <div class="parBrands col-lg-6">
+
+                                    <div class="para">
+                                        <p class="h4">Stronger Together</p>
+                                        <p class="pb-4">At GymFit, we believe fitness is more than just a routine – it’s
+                                            a lifestyle. With world-class training, modern equipment, and dedicated
+                                            support, we’re here to help you push limits, stay motivated, and achieve
+                                            your best self.</p>
+
+                                    </div>
+                                    <p class="h4">Follow Us</p>
+                                    <a href="#"><i class="fa-brands fa-twitter pe-3"></i></a>
+                                    <a href="#"><i class="fa-brands fa-facebook px-3"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram px-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
